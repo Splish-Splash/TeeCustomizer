@@ -6,6 +6,11 @@ import logging
 
 
 def get_faq(filepath: str | os.PathLike) -> list[str]:
+    '''
+    This function returns pairs of Q and As for a given filepath
+    :param filepath: filepath for a text file with FAQ
+    :return: list[str] Q and As split by pairs
+    '''
     if not os.path.exists(filepath):
         logging.error('Filepath %s does not exist', filepath)
         return []

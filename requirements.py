@@ -1,0 +1,4 @@
+transformers
+chainlit
+langchain
+faiss-cpu
