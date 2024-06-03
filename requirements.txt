@@ -2,3 +2,4 @@ transformers
 chainlit
 langchain
 faiss-cpu
+langchain_community
