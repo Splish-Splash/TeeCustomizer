@@ -1,7 +1,8 @@
 import torch
 
 FAISS_PATH = 'faiss_db'
-
+FAQ_PATH = 'data/FAQ.txt'
+OPTIONS_PATH = 'data/options.txt'
 MODEL_NAME = 'mistral'
 EMBEDDING_MODEL_NAME = 'Alibaba-NLP/gte-large-en-v1.5'
 
@@ -20,7 +21,8 @@ In order to answer, customer support need key details about conversation, user d
 The input query might look like: The user faced the problem X, did Y, struggled with Z etc. 
 You should return anything that customer support returned, without modification.'''
 
-SYSTEM_PROMPT = '''You are a helpful assistant in a t-shirt shop.
+SYSTEM_PROMPT = '''You are a helpful and nice assistant at TeeCustomizer - internet store that allows users to create and order customizable t-shirts. 
+Use emojis where it's applicable.
 Here are some basic info about our shop:
 {options}
 

@@ -14,12 +14,17 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 class CustomParser(ReActJsonSingleInputOutputParser):
     def parse(self, text: str):
         try:
-            return super().parse(text.replace("'", '"'))
+            return super().parse(text)
         except Exception as e:
-            raise 'Reply should contain Final Answer or Action with a valid JSON object (with a double quotes).'
+            raise ValueError('Reply should contain Final Answer or Action with a valid JSON object (with a double quotes).')
 
 
 def human_input_func(query: str) -> str:
+    '''
+    This function simulates the human customer support.
+    :param query:
+    :return: str
+    '''
     return f"Please contact us at support@anadea.com"
 
 
@@ -34,6 +39,7 @@ def get_tools():
 
 
 def get_llm():
+    # use self-hosted ChatOllama
     llm = ChatOllama(model=config.MODEL_NAME)
     return llm
 
@@ -47,7 +53,13 @@ def get_prompt_template():
     )
 
     return chat_template
+
+
 def get_agent():
+    '''
+    Construct an AgentExecutor instance using llm, tools and prompt
+    :return: AgentExecutor with memory
+    '''
     llm = get_llm()
     tools = get_tools()
     prompt = get_prompt_template()

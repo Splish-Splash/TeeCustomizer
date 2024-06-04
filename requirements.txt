@@ -8,3 +8,4 @@ sentencepiece
 sentence-transformers
 langchainhub
 chainlit
+torch
