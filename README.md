@@ -7,6 +7,7 @@ You can access this site using [chat interface]( https://7f5c-46-172-71-187.ngro
 # Technologies
 - Langchain
 - Faiss
+- RAG
 - Ollama
 - Mistral
 - Chainlit
