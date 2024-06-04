@@ -3,3 +3,8 @@ chainlit
 langchain
 faiss-cpu
 langchain_community
+accelerate
+sentencepiece
+sentence-transformers
+langchainhub
+chainlit

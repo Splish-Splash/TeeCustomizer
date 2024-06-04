@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import os
 
-from langchain.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
-
+from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from transformers import AutoConfig
+import config
 
 # one of the best embedding model compared to it's size
 # huggingface.co/spaces/mteb/leaderboard
-EMBEDDING_MODEL_NAME = 'gte-large-en-v1.5'
 
 
 def create_embeddings(docs: list[str], result_path: str | os.PathLike) -> FAISS:
@@ -38,10 +38,11 @@ def load_embeddings(filepath: str | os.PathLike) -> FAISS:
     """
 
     embeddings = get_embedding_model()
-    faiss_db = FAISS.load_local(filepath, embeddings)
+    faiss_db = FAISS.load_local(filepath, embeddings, allow_dangerous_deserialization=True)
     return faiss_db
 
 
 def get_embedding_model() -> HuggingFaceEmbeddings:
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    embeddings = HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL_NAME,
+                                       model_kwargs=dict(trust_remote_code=True))
     return embeddings
