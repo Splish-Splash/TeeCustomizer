@@ -1,3 +1,4 @@
+# TeeCustomizer 👕
 # About
 This project is about creating chatbot assistant that can answer customer questions about TeeCustomizer - t-shirt customization store.
 
