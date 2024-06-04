@@ -8,7 +8,7 @@ You can access this site using [chat interface]( https://7f5c-46-172-71-187.ngro
 - Langchain
 - Faiss
 - RAG
-- Ollama
+- Ollama (self-hosted AI, possibly can be changed to huggingface)
 - Mistral
 - Chainlit
 
