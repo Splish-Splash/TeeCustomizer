@@ -8,7 +8,7 @@ In order to run this, you need to:
 - run app using `chainlit run main.py --port 5000`
 
 # Access
-You can access this site using [hosted chat interface]( https://7f5c-46-172-71-187.ngrok-free.app )
+You can access this site using [chat interface]( https://7f5c-46-172-71-187.ngrok-free.app )
 
 # Technologies
 - Langchain
