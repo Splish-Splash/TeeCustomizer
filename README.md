@@ -2,7 +2,7 @@
 This project is about creating chatbot assistant that can answer customer questions about TeeCustomizer - t-shirt customization store.
 
 # Access
-You can access this site using [chat interface]( https://7f5c-46-172-71-187.ngrok-free.app )
+You can access this site using [chat interface](https://6fb0-46-172-71-187.ngrok-free.app/)
 
 # Technologies
 - Langchain
